@@ -72,6 +72,7 @@
 			children = (
 				E9356B2821C0535D007FFC7A /* CategoryTableViewController.swift */,
 				E9356B2A21C05394007FFC7A /* MenuTableViewController.swift */,
+				E9356B2E21C054C2007FFC7A /* MenuItemDetailViewController.swift */,
 				E9356B2C21C053A3007FFC7A /* OrderTableViewController.swift */,
 				E9356B1621C04F20007FFC7A /* AppDelegate.swift */,
 				E9356B1821C04F20007FFC7A /* ViewController.swift */,
@@ -80,7 +81,6 @@
 				E9356B3221C056F1007FFC7A /* IntermediaryModels.swift */,
 				E9356B3421C057ED007FFC7A /* Order.swift */,
 				E9356B3621C059FD007FFC7A /* MenuController.swift */,
-				E9356B2E21C054C2007FFC7A /* MenuItemDetailViewController.swift */,
 				E9356B1D21C04F22007FFC7A /* Assets.xcassets */,
 				E9356B1F21C04F22007FFC7A /* LaunchScreen.storyboard */,
 				E9356B2221C04F22007FFC7A /* Info.plist */,

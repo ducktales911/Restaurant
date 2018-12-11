@@ -84,7 +84,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="56P-9y-0mg" kind="show" id="ynn-Vl-eE3"/>
+                                    <segue destination="56P-9y-0mg" kind="show" identifier="MenuDetailSegue" id="ynn-Vl-eE3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,13 +105,72 @@
                     <view key="view" contentMode="scaleToFill" id="A4J-Kr-wF5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="yZh-QV-1lS">
+                                <rect key="frame" x="20" y="124" width="335" height="167"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VIX-HQ-cYB">
+                                <rect key="frame" x="20" y="299" width="269.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcW-ZP-APZ">
+                                <rect key="frame" x="20" y="331" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1to-yI-HPN">
+                                <rect key="frame" x="20" y="577" width="335" height="33"/>
+                                <color key="backgroundColor" red="0.29664799964023236" green="0.69640353611617656" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="0.29948654770851135" green="0.69620698690414429" blue="0.99956816434860229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add To Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="56P-9y-0mg" eventType="touchUpInside" id="zQP-hh-q1v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$ 27.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40W-EV-kuF">
+                                <rect key="frame" x="297.5" y="299" width="57.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yZh-QV-1lS" firstAttribute="top" secondItem="vO4-tl-IhH" secondAttribute="top" constant="8" id="1BO-rV-Vpe"/>
+                            <constraint firstItem="vO4-tl-IhH" firstAttribute="trailing" secondItem="yZh-QV-1lS" secondAttribute="trailing" constant="20" id="4j1-pj-RGf"/>
+                            <constraint firstItem="1to-yI-HPN" firstAttribute="leading" secondItem="vO4-tl-IhH" secondAttribute="leading" constant="20" id="B11-S5-Gir"/>
+                            <constraint firstItem="hcW-ZP-APZ" firstAttribute="top" secondItem="VIX-HQ-cYB" secondAttribute="bottom" constant="8" id="G5F-PR-h17"/>
+                            <constraint firstItem="vO4-tl-IhH" firstAttribute="trailing" secondItem="40W-EV-kuF" secondAttribute="trailing" constant="20" id="Gk2-0S-8KL"/>
+                            <constraint firstItem="40W-EV-kuF" firstAttribute="top" secondItem="yZh-QV-1lS" secondAttribute="bottom" constant="8" id="PMt-ka-PZW"/>
+                            <constraint firstItem="yZh-QV-1lS" firstAttribute="height" secondItem="A4J-Kr-wF5" secondAttribute="height" multiplier="0.25" id="TWc-ZC-uqh"/>
+                            <constraint firstItem="vO4-tl-IhH" firstAttribute="trailing" secondItem="hcW-ZP-APZ" secondAttribute="trailing" constant="20" id="XqJ-80-F9d"/>
+                            <constraint firstItem="VIX-HQ-cYB" firstAttribute="leading" secondItem="vO4-tl-IhH" secondAttribute="leading" constant="20" id="asH-ib-PYO"/>
+                            <constraint firstItem="VIX-HQ-cYB" firstAttribute="top" secondItem="yZh-QV-1lS" secondAttribute="bottom" constant="8" id="fot-SP-1jC"/>
+                            <constraint firstItem="hcW-ZP-APZ" firstAttribute="leading" secondItem="vO4-tl-IhH" secondAttribute="leading" constant="20" id="g8K-Ix-bh4"/>
+                            <constraint firstItem="vO4-tl-IhH" firstAttribute="trailing" secondItem="1to-yI-HPN" secondAttribute="trailing" constant="20" id="lff-1X-Twc"/>
+                            <constraint firstItem="40W-EV-kuF" firstAttribute="leading" secondItem="VIX-HQ-cYB" secondAttribute="trailing" constant="8" id="p8L-PI-L58"/>
+                            <constraint firstItem="yZh-QV-1lS" firstAttribute="leading" secondItem="vO4-tl-IhH" secondAttribute="leading" constant="20" id="x0b-fp-R5L"/>
+                            <constraint firstItem="vO4-tl-IhH" firstAttribute="bottom" secondItem="1to-yI-HPN" secondAttribute="bottom" constant="8" id="zpk-z7-SdC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vO4-tl-IhH"/>
                     </view>
+                    <connections>
+                        <outlet property="addToOrderButton" destination="1to-yI-HPN" id="KfG-C3-sBk"/>
+                        <outlet property="detailTextLabel" destination="hcW-ZP-APZ" id="7SX-uS-BKr"/>
+                        <outlet property="imageView" destination="yZh-QV-1lS" id="abX-3W-sJ7"/>
+                        <outlet property="priceLabel" destination="40W-EV-kuF" id="LyJ-YY-yjR"/>
+                        <outlet property="titleLabel" destination="VIX-HQ-cYB" id="86p-np-ICl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmB-sG-P0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407" y="164"/>
+            <point key="canvasLocation" x="3405.5999999999999" y="163.26836581709148"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="AdK-Tj-wce">
@@ -195,4 +254,7 @@
             <point key="canvasLocation" x="-82.400000000000006" y="529.38530734632684"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="100" height="100"/>
+    </resources>
 </document>
