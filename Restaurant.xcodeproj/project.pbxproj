@@ -20,6 +20,7 @@
 		E9356B3321C056F1007FFC7A /* IntermediaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3221C056F1007FFC7A /* IntermediaryModels.swift */; };
 		E9356B3521C057ED007FFC7A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3421C057ED007FFC7A /* Order.swift */; };
 		E9356B3721C059FD007FFC7A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3621C059FD007FFC7A /* MenuController.swift */; };
+		E9356B3921C10BCE007FFC7A /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3821C10BCE007FFC7A /* OrderConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E9356B3221C056F1007FFC7A /* IntermediaryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntermediaryModels.swift; sourceTree = "<group>"; };
 		E9356B3421C057ED007FFC7A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E9356B3621C059FD007FFC7A /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		E9356B3821C10BCE007FFC7A /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				E9356B2A21C05394007FFC7A /* MenuTableViewController.swift */,
 				E9356B2E21C054C2007FFC7A /* MenuItemDetailViewController.swift */,
 				E9356B2C21C053A3007FFC7A /* OrderTableViewController.swift */,
+				E9356B3821C10BCE007FFC7A /* OrderConfirmationViewController.swift */,
 				E9356B1621C04F20007FFC7A /* AppDelegate.swift */,
 				E9356B1821C04F20007FFC7A /* ViewController.swift */,
 				E9356B1A21C04F20007FFC7A /* Main.storyboard */,
@@ -168,6 +171,7 @@
 				E9356B3321C056F1007FFC7A /* IntermediaryModels.swift in Sources */,
 				E9356B1921C04F20007FFC7A /* ViewController.swift in Sources */,
 				E9356B1721C04F20007FFC7A /* AppDelegate.swift in Sources */,
+				E9356B3921C10BCE007FFC7A /* OrderConfirmationViewController.swift in Sources */,
 				E9356B2921C0535D007FFC7A /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
