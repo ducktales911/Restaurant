@@ -7,7 +7,7 @@ Features:
 - Deleting items from order.
 - Submitting the order and receiving a estimate of the time needed to prepare the order.
 
-![github-small](https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.18.14.png)
-![alt text](https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.18.14.png)
-![alt text](https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.18.14.png)
-![alt text](https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.18.14.png)
+<img src="https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.18.14.png" width="48">
+<img src="https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.32.50.png" width="48">
+<img src="https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.33.37.png" width="48">
+<img src="https://raw.githubusercontent.com/ducktales911/Restaurant/master/Schermafbeelding%202019-05-11%20om%2021.33.46.png" width="48">
