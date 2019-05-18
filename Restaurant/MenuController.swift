@@ -10,24 +10,23 @@ import Foundation
 import UIKit
 
 class MenuController {
-    
+
     static let shared = MenuController()
     static let orderUpdatedNotification = Notification.Name("MenuController.orderUpdated")
-    
+
     var order = Order() {
         didSet {
             NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
         }
     }
-    
-    
+
     let baseURL = URL(string: "http://localhost:8090/")!
 
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
         let task = URLSession.shared.dataTask(with: categoryURL) { (data, response, error) in
             if let data = data,
-            let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Any],
+            let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let categories = jsonDictionary?["categories"] as? [String] {
                 completion(categories)
             } else {
@@ -53,7 +52,7 @@ class MenuController {
         }
         task.resume()
     }
-    
+
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data,
