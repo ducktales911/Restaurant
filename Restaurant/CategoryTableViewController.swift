@@ -21,6 +21,7 @@ class CategoryTableViewController: UITableViewController {
         }
     }
 
+    // Voert UI updates uit op de main queue zodat ze meteen zichtbaar zijn.
     func updateUI(with categories: [String]) {
         DispatchQueue.main.async {
             self.categories = categories
@@ -30,10 +31,7 @@ class CategoryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    // Aantal cellen = aantal categoriën
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
@@ -44,11 +42,13 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
 
+    // Toon de naam van elke categorie in de tekstLabel van de bijbehorende cel in hoofdletters.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let categoryString = categories[indexPath.row]
         cell.textLabel?.text = categoryString.capitalized
     }
 
+    // Als de gebruiker een cel selecteert, geef de categorie van de cel door aan MenuTableViewController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuSegue" {
             let menuTableViewController = segue.destination as! MenuTableViewController

@@ -8,10 +8,12 @@
 
 import Foundation
 
+// Intermediary model die alle categoriën bevat die de API geeft.
 struct Categories: Codable {
     let categories: [String]
 }
 
+// Intermediary model voor preparation_time voor een enkel MenuItem.
 struct PreparationTime: Codable {
     let prepTime: Int
 

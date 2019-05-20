@@ -10,6 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
+    // Array van items die in de tabel getoond moeten worden.
     var menuItems = [MenuItem]()
     var category: String!
 
@@ -17,6 +18,7 @@ class MenuTableViewController: UITableViewController {
         super.viewDidLoad()
 
         title = category.capitalized
+        // Als menuItems data bevat, update de UI met deze items.
         MenuController.shared.fetchMenuItems(categoryName: category) { (menuItems) in
             if let menuItems = menuItems {
                 self.updateUI(with: menuItems)
@@ -24,6 +26,7 @@ class MenuTableViewController: UITableViewController {
         }
     }
 
+    // Update de tableView via de main queue.
     func updateUI(with menuItems: [MenuItem]) {
         DispatchQueue.main.async {
             self.menuItems = menuItems
@@ -33,10 +36,7 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    // Aantal cellen = aantal gerechten.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
     }
@@ -51,6 +51,7 @@ class MenuTableViewController: UITableViewController {
         return 100
     }
 
+    // Toon de naam, prijs en afbeelding van de menuItem in de cel.
     func configure(cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let menuItem = menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
@@ -67,6 +68,7 @@ class MenuTableViewController: UITableViewController {
         }
     }
 
+    // Als de gebruiker een cel selecteert, geef de bijbehorende menuItem door aan menuItemDetailViewController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuDetailSegue" {
             let menuItemDetailViewController = segue.destination as! MenuItemDetailViewController

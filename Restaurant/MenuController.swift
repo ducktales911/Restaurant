@@ -22,11 +22,12 @@ class MenuController {
 
     let baseURL = URL(string: "http://localhost:8090/")!
 
+    // Haalt categoriën op. Completion parameter zal de categoriën bevatten die door de server worden gegeven, of nil als de server niet op tijd reageert of als parsing faalt.
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
         let task = URLSession.shared.dataTask(with: categoryURL) { (data, response, error) in
             if let data = data,
-            let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let jsonDictionary = ((try? JSONSerialization.jsonObject(with: data) as? [String: Any]) as [String : Any]??),
             let categories = jsonDictionary?["categories"] as? [String] {
                 completion(categories)
             } else {
@@ -36,6 +37,7 @@ class MenuController {
         task.resume()
     }
 
+    // Haalt MenuItems op gegeven een categorie. Completion parameter zal de MenuItems bevatten die door de server worden gegeven, of nil als de server niet op tijd reageert of als parsing faalt.
     func fetchMenuItems(categoryName: String, completion: @escaping ([MenuItem]?) -> Void) {
         let initialMenuURL = baseURL.appendingPathComponent("menu")
         var components = URLComponents(url: initialMenuURL, resolvingAgainstBaseURL: true)!
@@ -53,6 +55,7 @@ class MenuController {
         task.resume()
     }
 
+    // Haalt afbeelding op. Completion parameter ontvangt UIImage data die door de server wordt gegeven, of nil als de server niet op tijd reageert.
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data,
@@ -65,6 +68,7 @@ class MenuController {
         task.resume()
     }
 
+    // Doet een POST request met een collectie van menu item IDs. De response bevat een integer met de voorbereidingstijd die wordt ontvangen door de completion parameter.
     func submitOrder(menuIds: [Int], completion: @escaping (Int?) -> Void) {
         let orderURL = baseURL.appendingPathComponent("order")
         var request = URLRequest(url: orderURL)

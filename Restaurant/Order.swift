@@ -8,10 +8,10 @@
 
 import Foundation
 
+// Bevat een lijst van items die de gebruiker toegevoegd heeft.
 struct Order: Codable {
-
     var menuItems: [MenuItem]
-
+    
     init(menuItems: [MenuItem] = []) {
         self.menuItems = menuItems
     }

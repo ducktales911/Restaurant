@@ -8,15 +8,15 @@
 
 import UIKit
 
+// Geeft een bevestiging met de wachttijd weer.
 class OrderConfirmationViewController: UIViewController {
 
     @IBOutlet weak var timeRemainingLabel: UILabel!
-    var minutes: Int!
+    var minutes: Int! // Wordt gegeven door OrderTableViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         timeRemainingLabel.text = "Thank you for your order! Your wait time is approximately \(minutes!) minutes"
     }
-
 }

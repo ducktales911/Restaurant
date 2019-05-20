@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Bevat properties die corresponderen met de keys in elke dictionary.
 struct MenuItem: Codable {
     var id: Int
     var name: String
@@ -26,6 +27,7 @@ struct MenuItem: Codable {
     }
 }
 
+// Bevat alle MenuItem structs die door de API gegeven als JSON array gegeven worden.
 struct MenuItems: Codable {
     let items: [MenuItem]
 }

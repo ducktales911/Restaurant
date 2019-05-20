@@ -15,7 +15,7 @@ class OrderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdatedNotification, object: nil)
+        NotificationCenter.default.addObserver(tableView!, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdatedNotification, object: nil)
     }
 
     // MARK: - Table view data source
@@ -67,6 +67,7 @@ class OrderTableViewController: UITableViewController {
         return 100
     }
 
+    // Nodig voor de "Dismiss" knop in de OrderConfirmation view. Verwijder de lijst van menuItems.
     @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
 
         if segue.identifier == "DismissConfirmation" {
@@ -74,6 +75,7 @@ class OrderTableViewController: UITableViewController {
         }
     }
 
+    // Geef een alert voor bevestiging van de bestelling met de totale prijs. Als gebruiker bevestigd, voer uploadOrder() uit.
     @IBAction func submitTapped(_ sender: Any) {
         let orderTotal = MenuController.shared.order.menuItems.reduce(0.0) { (result, menuItem) -> Double in
             return result + menuItem.price
@@ -88,6 +90,7 @@ class OrderTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    // Maak een request via submitOrder() in MenuController, met een collectie van menu IDs als argument. Check via de main queue of de server de wachttijd heeft teruggegeven en bewaar deze in orderMinutes. Voer segue uit.
     func uploadOrder() {
         let menuIds = MenuController.shared.order.menuItems.map { $0.id }
         MenuController.shared.submitOrder(menuIds: menuIds) { (minutes) in
@@ -100,6 +103,7 @@ class OrderTableViewController: UITableViewController {
         }
     }
 
+    // Geef orderMinutes door aan OrderConfirmationViewController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ConfirmationSegue" {
             let orderConfirmationViewController = segue.destination as! OrderConfirmationViewController

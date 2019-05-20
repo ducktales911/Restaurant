@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var orderTabBarItem: UITabBarItem!
 
+    // Toon aantal menuItems in Order Table View als badge in de tab bar.
     @objc func updateOrderBadge() {
         switch MenuController.shared.order.menuItems.count {
         case 0:
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Cache voor afbeeldingen.
         let temporaryDirectory = NSTemporaryDirectory()
         let urlCache = URLCache(memoryCapacity: 25_000_000, diskCapacity: 50_000_000, diskPath: temporaryDirectory)
         URLCache.shared = urlCache
